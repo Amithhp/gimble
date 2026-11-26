@@ -121,8 +121,8 @@ void loop() {
   pitchTarget = constrain(pitchTarget, 20, 160);
 
   // === 5. Map to Servo Positions === //
-  int servoRollPos  = constrain(map((int)roll, -90, 90, 180, 0), 0, 180);
-  int servoPitchPos = constrain((int)pitchTarget - (int)pitch, 0, 180);
+  int servoRollPos  = constrain(map((int)roll, -90, 90, 0, 180), 0, 180);
+  int servoPitchPos = constrain((int)pitchTarget + (int)pitch, 0, 180);
   int servoYawPos   = constrain((int)yawTarget, 0, 180);
 
   pitchServo.write(servoPitchPos);
